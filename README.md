@@ -1,114 +1,32 @@
-## Introduction
+## Exploratory Data Analysis Project
 
-This assignment uses data from
-the <a href="http://archive.ics.uci.edu/ml/">UC Irvine Machine
-Learning Repository</a>, a popular repository for machine learning
-datasets. In particular, we will be using the "Individual household
-electric power consumption Data Set" which I have made available on
-the course web site:
+### Project Requirements
+1. Loading the dataset into R
+2. Construct the plot and save it to a PNG file with a width of 480 pixels and a height of 480 pixels.
+3. Name each of the plot files as plot1.png, plot2.png, etc.
+4. Create a separate R code file (plot1.R, plot2.R, etc.) that constructs the corresponding plot, i.e. code in plot1.R constructs the plot1.png plot. Your code file should include code for reading the data so that the plot can be fully reproduced. You should also include the code that creates the PNG file.
+5. Add the PNG file and R code file to your git repository
 
+### Project deliverables
+1. Plot1 - Global Active Power Histogram with red columns
+2. Plot2 - Global Active Power line plot for consumption over period of time
+3. Plot3 - Global Active Power line plot for sub_meter consumption over period of time
+4. Plot4 - Dashboard with 4 different line plots with different variables and formatting
 
-* <b>Dataset</b>: <a href="https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip">Electric power consumption</a> [20Mb]
-
-* <b>Description</b>: Measurements of electric power consumption in
-one household with a one-minute sampling rate over a period of almost
-4 years. Different electrical quantities and some sub-metering values
-are available.
-
-
-The following descriptions of the 9 variables in the dataset are taken
-from
-the <a href="https://archive.ics.uci.edu/ml/datasets/Individual+household+electric+power+consumption">UCI
-web site</a>:
-
-<ol>
-<li><b>Date</b>: Date in format dd/mm/yyyy </li>
-<li><b>Time</b>: time in format hh:mm:ss </li>
-<li><b>Global_active_power</b>: household global minute-averaged active power (in kilowatt) </li>
-<li><b>Global_reactive_power</b>: household global minute-averaged reactive power (in kilowatt) </li>
-<li><b>Voltage</b>: minute-averaged voltage (in volt) </li>
-<li><b>Global_intensity</b>: household global minute-averaged current intensity (in ampere) </li>
-<li><b>Sub_metering_1</b>: energy sub-metering No. 1 (in watt-hour of active energy). It corresponds to the kitchen, containing mainly a dishwasher, an oven and a microwave (hot plates are not electric but gas powered). </li>
-<li><b>Sub_metering_2</b>: energy sub-metering No. 2 (in watt-hour of active energy). It corresponds to the laundry room, containing a washing-machine, a tumble-drier, a refrigerator and a light. </li>
-<li><b>Sub_metering_3</b>: energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.</li>
-</ol>
-
-## Loading the data
+### Code logic description
+1. All 4 plots from project requirements can be created by running "master_script.R" which calls individual scripts
+2. Individual plots can be created by running specific scripts (i.e. "plot1.R"). Individual plot scripts are loading data by calling "data_loading_script.R" and plotting functions afterwards.
 
 
-
-
-
-When loading the dataset into R, please consider the following:
-
-* The dataset has 2,075,259 rows and 9 columns. First
-calculate a rough estimate of how much memory the dataset will require
-in memory before reading into R. Make sure your computer has enough
-memory (most modern computers should be fine).
-
-* We will only be using data from the dates 2007-02-01 and
-2007-02-02. One alternative is to read the data from just those dates
-rather than reading in the entire dataset and subsetting to those
-dates.
-
-* You may find it useful to convert the Date and Time variables to
-Date/Time classes in R using the `strptime()` and `as.Date()`
-functions.
-
-* Note that in this dataset missing values are coded as `?`.
-
-
-## Making Plots
-
-Our overall goal here is simply to examine how household energy usage
-varies over a 2-day period in February, 2007. Your task is to
-reconstruct the following plots below, all of which were constructed
-using the base plotting system.
-
-First you will need to fork and clone the following GitHub repository:
-[https://github.com/rdpeng/ExData_Plotting1](https://github.com/rdpeng/ExData_Plotting1)
-
-
-For each plot you should
-
-* Construct the plot and save it to a PNG file with a width of 480
-pixels and a height of 480 pixels.
-
-* Name each of the plot files as `plot1.png`, `plot2.png`, etc.
-
-* Create a separate R code file (`plot1.R`, `plot2.R`, etc.) that
-constructs the corresponding plot, i.e. code in `plot1.R` constructs
-the `plot1.png` plot. Your code file **should include code for reading
-the data** so that the plot can be fully reproduced. You should also
-include the code that creates the PNG file.
-
-* Add the PNG file and R code file to your git repository
-
-When you are finished with the assignment, push your git repository to
-GitHub so that the GitHub version of your repository is up to
-date. There should be four PNG files and four R code files.
-
-
-The four plots that you will need to construct are shown below. 
-
-
-### Plot 1
-
-
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
-
-
-### Plot 2
-
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
-
-
-### Plot 3
-
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
-
-
-### Plot 4
-
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
-
+### Content of the repository
+- ["master_script.R"](master_script.R) - script to load the data and to call individual plotting scripts
+- ["data_loading_script.R"](data_loading_script.R) - script to load the data from "household_power_consumption.txt" file
+- ~~"data_loading_script_v2.R" - v2 of script to load the data from "household_power_consumption.txt" file~~
+- ["plot1.R"](plot_scripts/plot1.R) - script to plot 1st chart from project deliverables
+- ["plot2.R"](plot_scripts/plot2.R) - script to plot 2nd chart from project deliverables
+- ["plot3.R"](plot_scripts/plot3.R) - script to plot 3rd chart from project deliverables
+- ["plot4.R"](plot_scripts/plot4.R) - script to plot 4th chart from project deliverables
+- ["plot1.png"](plots/plot1.png) - output chart of "plot1.R" script
+- ["plot2.png"](plots/plot2.png) - output chart of "plot2.R" script
+- ["plot3.png"](plots/plot3.png) - output chart of "plot3.R" script
+- ["plot4.png"](plots/plot4.png) - output chart of "plot4.R" script
